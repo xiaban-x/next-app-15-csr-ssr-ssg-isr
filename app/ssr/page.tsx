@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'SSR 测试页面 - App Router',
-  description: '服务端渲染测试页面 - Next.js 13 App Router',
+  description: '服务端渲染测试页面 - Next.js 15 App Router',
 }
 
 // 强制动态渲染

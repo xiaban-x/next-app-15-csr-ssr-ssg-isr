@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'SSG 测试页面 - App Router',
-  description: '静态站点生成测试页面 - Next.js 13 App Router',
+  description: '静态站点生成测试页面 - Next.js 15 App Router',
 }
 
 // 模拟数据获取函数

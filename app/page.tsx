@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'App Router 示例首页',
-  description: 'Next.js 13 App Router 不同渲染模式示例导航',
+  description: 'Next.js 15 App Router 不同渲染模式示例导航',
 }
 
 export default function HomePage() {
@@ -10,11 +10,11 @@ export default function HomePage() {
     <div className="container">
       <main className="main">
         <h1 className="title">
-          Next.js 13 App Router 渲染模式示例
+          Next.js 15 App Router 渲染模式示例
         </h1>
 
         <p className="description">
-          这个项目演示了 Next.js 13 App Router 中的四种不同渲染模式
+          这个项目演示了 Next.js 15 App Router 中的四种不同渲染模式
         </p>
 
         <div className="card">
