@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     timestamp: new Date().toISOString(),
     method: 'GET',
     userAgent: request.headers.get('user-agent'),
-    ip: request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
   })
 }
 
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
       method: 'POST',
       userAgent: request.headers.get('user-agent'),
-      ip: request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     })
   } catch (error) {
     return NextResponse.json(
@@ -43,7 +43,7 @@ export async function PUT(request: NextRequest) {
       timestamp: new Date().toISOString(),
       method: 'PUT',
       userAgent: request.headers.get('user-agent'),
-      ip: request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
     })
   } catch (error) {
     return NextResponse.json(
@@ -62,6 +62,6 @@ export async function DELETE(request: NextRequest) {
     timestamp: new Date().toISOString(),
     method: 'DELETE',
     userAgent: request.headers.get('user-agent'),
-    ip: request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
   })
 }
