@@ -32,6 +32,7 @@ export default function HomePage() {
           <Link href="/isr" className="navItem">🔄 ISR 示例</Link>
           <Link href="/ssr" className="navItem">⚡ SSR 示例</Link>
           <Link href="/csr" className="navItem">🖥️ CSR 示例</Link>
+          <Link href="/api-test" className="navItem">🔧 API 测试工具</Link>
         </nav>
 
         <div className="card">
