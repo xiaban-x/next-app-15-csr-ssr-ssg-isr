@@ -10,11 +10,12 @@ export default function HomePage() {
     <div className="container">
       <main className="main">
         <h1 className="title">
-          Next.js 15 App Router 渲染模式示例1111
+          Next.js 15 App Router 渲染模式示例
         </h1>
 
         <p className="description">
           这个项目演示了 Next.js 15 App Router 中的四种不同渲染模式
+          以及布局、流式渲染、Server Actions、错误处理等进阶能力
         </p>
 
         <div className="card">
@@ -27,17 +28,27 @@ export default function HomePage() {
           </ul>
         </div>
 
+        <h2 className="nav-section-title">渲染模式与数据请求</h2>
         <nav className="nav">
           <Link href="/ssg" className="navItem">🏗️ SSG 示例</Link>
           <Link href="/isr" className="navItem">🔄 ISR 示例</Link>
           <Link href="/ssr" className="navItem">⚡ SSR 示例</Link>
           <Link href="/csr" className="navItem">🖥️ CSR 示例</Link>
           <Link href="/api-test" className="navItem">🔧 API 测试工具</Link>
-          <Link href="/utm" className="navItem">📈 UTM 归因演示</Link>
+        </nav>
+
+        <h2 className="nav-section-title">App Router 进阶功能演示</h2>
+        <nav className="nav">
+          <Link href="/posts" className="navItem">📰 文章频道<br /><small>动态路由 + 嵌套布局</small></Link>
+          <Link href="/streaming" className="navItem">🖨️ 流式渲染<br /><small>loading + Suspense</small></Link>
+          <Link href="/form" className="navItem">📝 Server Actions<br /><small>表单直写服务端</small></Link>
+          <Link href="/search" className="navItem">🔍 URL 状态搜索<br /><small>searchParams 过滤</small></Link>
+          <Link href="/error-demo" className="navItem">💥 错误边界<br /><small>error.tsx 演示</small></Link>
+          <Link href="/utm" className="navItem">📈 UTM 归因<br /><small>Analytics 渠道追踪</small></Link>
         </nav>
 
         <div className="card">
-          <h2>Vercel Analytics 数据分析</h2>
+          <h2>Vercel 数据分析与性能监控</h2>
           <p>本项目已集成 <strong>@vercel/analytics</strong>，包括：</p>
           <ul>
             <li>
@@ -53,6 +64,15 @@ export default function HomePage() {
               <strong>UTM 归因:</strong> <code>middleware.ts</code> 将落地页的 UTM
               参数固化到 cookie，站内跳转后归因不丢失，详见{' '}
               <Link href="/utm">UTM 归因演示</Link>
+            </li>
+          </ul>
+          <p>项目同时集成了 <strong>@vercel/speed-insights</strong>（性能监控）：</p>
+          <ul>
+            <li>
+              <strong>Speed Insights:</strong> 根布局中的{' '}
+              <code>&lt;SpeedInsights /&gt;</code> 自动采集真实用户访问时的 Core Web
+              Vitals（LCP / CLS / INP 等），并在 Vercel 控制台的 Speed
+              Insights 页可视化
             </li>
           </ul>
         </div>
