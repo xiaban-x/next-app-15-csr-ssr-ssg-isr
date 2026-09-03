@@ -33,7 +33,29 @@ export default function HomePage() {
           <Link href="/ssr" className="navItem">⚡ SSR 示例</Link>
           <Link href="/csr" className="navItem">🖥️ CSR 示例</Link>
           <Link href="/api-test" className="navItem">🔧 API 测试工具</Link>
+          <Link href="/utm" className="navItem">📈 UTM 归因演示</Link>
         </nav>
+
+        <div className="card">
+          <h2>Vercel Analytics 数据分析</h2>
+          <p>本项目已集成 <strong>@vercel/analytics</strong>，包括：</p>
+          <ul>
+            <li>
+              <strong>页面浏览统计:</strong> 根布局中的 <code>&lt;Analytics /&gt;</code>{' '}
+              自动上报每次页面访问（含 App Router 客户端路由跳转）
+            </li>
+            <li>
+              <strong>自定义事件上报:</strong>{' '}
+              <Link href="/api-test">API 测试工具</Link>
+              页面演示了 <code>track()</code> 用法（按钮点击、请求成功 / 失败等）
+            </li>
+            <li>
+              <strong>UTM 归因:</strong> <code>middleware.ts</code> 将落地页的 UTM
+              参数固化到 cookie，站内跳转后归因不丢失，详见{' '}
+              <Link href="/utm">UTM 归因演示</Link>
+            </li>
+          </ul>
+        </div>
 
         <div className="card">
           <h2>App Router vs Pages Router 主要区别</h2>

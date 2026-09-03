@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { track } from '@vercel/analytics'
 
 export default function ApiTestPage() {
   const [url, setUrl] = useState('')
@@ -84,14 +85,31 @@ export default function ApiTestPage() {
         url: res.url,
         ok: res.ok
       })
+
+      // 自定义事件上报：请求成功（附带方法、地址、状态码、耗时）
+      track('api_request_succeeded', {
+        method,
+        url,
+        status: res.status,
+        durationMs: endTime - startTime,
+      })
     } catch (err) {
       setError(err instanceof Error ? err.message : '请求失败')
+
+      // 自定义事件上报：请求失败
+      track('api_request_failed', {
+        method,
+        url,
+        error: err instanceof Error ? err.message : '未知错误',
+      })
     } finally {
       setLoading(false)
     }
   }
 
   const loadPreset = (preset: string) => {
+    // 自定义事件上报：预置请求被选中
+    track('preset_selected', { preset })
     switch (preset) {
       case 'jsonplaceholder':
         setUrl('https://jsonplaceholder.typicode.com/posts/1')
