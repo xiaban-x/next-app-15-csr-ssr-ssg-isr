@@ -14,7 +14,7 @@ export default function HomePage() {
         </h1>
 
         <p className="description">
-          这个项目演示了 Next.js 15 App Router 中的四种不同渲染模式
+          这个项目演示了 Next.js 15 App Router 中的四种不同渲染模式2
           以及布局、流式渲染、Server Actions、错误处理等进阶能力
         </p>
 
